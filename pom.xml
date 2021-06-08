@@ -51,27 +51,27 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>6.0.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
-                    <!-- Generate all report formats -->
-                    <format>ALL</format>
-                    <!-- Don't use Nexus Analyzer -->
-                    <centralAnalyzerEnabled>false</centralAnalyzerEnabled>
-                    <!-- Am I the latest version? -->
-                    <versionCheckEnabled>true</versionCheckEnabled>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.owasp</groupId>-->
+<!--                <artifactId>dependency-check-maven</artifactId>-->
+<!--                <version>6.0.2</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <failBuildOnCVSS>7</failBuildOnCVSS>-->
+<!--                    &lt;!&ndash; Generate all report formats &ndash;&gt;-->
+<!--                    <format>ALL</format>-->
+<!--                    &lt;!&ndash; Don't use Nexus Analyzer &ndash;&gt;-->
+<!--                    <centralAnalyzerEnabled>false</centralAnalyzerEnabled>-->
+<!--                    &lt;!&ndash; Am I the latest version? &ndash;&gt;-->
+<!--                    <versionCheckEnabled>true</versionCheckEnabled>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -104,32 +104,6 @@
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.7.0.1746</version>
-            </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>2.5.2</version>
-                <configuration>
-                    <to>
-                        <image>docker.io/maartensmeets/${project.artifactId}</image>
-                        <tags>  
-                            <tag>${project.version}</tag>
-                            <tag>latest</tag>
-                        </tags>
-                        <auth>
-                            <username>${env.DOCKER_USERNAME}</username>
-                            <password>${env.DOCKER_PASSWORD}</password>
-                        </auth>
-                    </to>
-                    <container>
-                        <ports>
-                            <port>8080</port>
-                        </ports>
-                    </container>
-                    <from>
-                        <image>openjdk:11-jdk-slim</image>
-                    </from>
-                </configuration>
             </plugin>
         </plugins>
     </build>
