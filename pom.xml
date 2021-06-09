@@ -11,6 +11,7 @@
     <groupId>nl.amis.smeetsm</groupId>
     <artifactId>jenkins-kube</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>jenkins-kube</name>
     <description>Demo project for Spring Boot</description>
 
@@ -105,6 +106,15 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.7.0.1746</version>
             </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-war-plugin</artifactId>-->
+<!--                <version>3.3.1</version>-->
+<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>&ndash;&gt;-->
+<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
